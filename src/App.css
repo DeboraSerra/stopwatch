@@ -1,15 +1,8 @@
 .App {
   text-align: center;
-  /* background-image: linear-gradient(to bottom right, rgb(5, 9, 19), rgb(37, 71, 143)); */
   background-image: url(https://images6.alphacoders.com/853/853375.png);
-  height: 100vh;
+  min-height: 100vh;
   background-position: top;
-}
-.image {
-  position: absolute;
-  width: 850px;
-  bottom: 0;
-  right: 0;
 }
 
 .alert {
@@ -60,4 +53,37 @@ button {
   font-size: 2rem;
   border-radius: 15px;
   background-image: radial-gradient(rgb(104, 145, 235), rgb(85, 120, 196), rgb(44, 78, 150), rgb(11, 33, 80));
+}
+
+@media screen and ( max-width : 992px ) {
+  
+  .App {
+    background-image: linear-gradient(to bottom right, rgb(5, 9, 19), rgb(37, 71, 143));
+  }
+}
+
+@media screen and ( max-width : 453px ) {
+  
+  .alert {
+    font-size: 8rem;
+    color: red;
+    font-weight: 500;
+    text-shadow: 0 0 30px black;
+  }
+  
+  .stop-watch {
+    font-size: 6rem;
+  }
+  
+  .input-sect {
+    margin: 15px;
+  }
+  
+  input {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    font-size: 2rem;
+  }
+  
 }
