@@ -19,7 +19,8 @@ class App extends React.Component {
     this.setState((prevSt) => ({ ...prevSt, [name]: value }));
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
+    e.preventDefault();
     let { hour, min, sec } = this.state;
     if (hour === '') hour = 0;
     if (min === '') min = 0;
@@ -34,7 +35,7 @@ class App extends React.Component {
 
   render() {
     const { time, hour, min, sec, clicked } = this.state;
-    const setTime = (<section className="flex-sect">
+    const setTime = (<form onSubmit={ this.handleClick } className="flex-sect">
       <section className="input-sect">
         <input
           type="text"
@@ -62,8 +63,8 @@ class App extends React.Component {
           max="60"
         />
       </section>
-      <button type="button" onClick={ this.handleClick }>Start</button>
-    </section>)
+      <button type="submit" onClick={ this.handleClick }>Start</button>
+    </form>)
     return (
       <div className="App">
         {/* <img className="image" src="https://www.pngkey.com/png/full/22-223345_hogwarts-castle-png-harry-potter-hogwarts-png.png" alt="Hogwarts castle" /> */}

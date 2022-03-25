@@ -52,7 +52,30 @@ class StopWatch extends React.Component {
     return (
       <div className="stop-watch-sect">
         {!finished && <p className="stop-watch">{time}</p>}
-        {finished && alarm}
+        {finished && (
+          <>
+            {alarm}
+            {date !== 'Fri' ? (
+              <iframe
+                className="video"
+                width="500"
+                height="600"
+                src="https://www.youtube.com/embed/TrJVgGnA7rw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            ) : (
+              <iframe
+                className="video"
+                width="500"
+                height="600"
+                src="https://www.youtube.com/embed/1TewCPi92ro"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            )}
+          </>
+        )}
       </div>
     )
   }
